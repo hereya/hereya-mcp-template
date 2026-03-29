@@ -1,0 +1,28 @@
+{
+  "name": "mcp-server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build:ui": "vite build",
+    "build:server": "esbuild src/handler.ts --bundle --platform=node --target=node22 --outfile=dist/handler.js --format=cjs",
+    "build": "npm run build:ui && npm run build:server",
+    "inspect": "node --import tsx src/dev-server.ts & sleep 1 && mcp-inspector --transport streamablehttp http://localhost:${PORT:-3000}",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.21.1",
+    "@types/aws-lambda": "^8",
+    "@types/node": "^25.5.0",
+    "esbuild": "^0.25",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vite": "^7.3.1",
+    "vite-plugin-singlefile": "^2.3.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.1007.0",
+    "@modelcontextprotocol/ext-apps": "^1.2.2",
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^4.3.6"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules
+cdk.out
+.cdk.staging
+*.js
+*.d.ts
+*.js.map
+
+# Keep all files inside template/
+!template/**

@@ -1,0 +1,6 @@
+name: hereya/mcp-template
+version: 0.1.0
+description: "Generic MCP server template with CodeCommit"
+iac: cdk
+infra: aws
+visibility: public

@@ -1,0 +1,6 @@
+# project: <to be filled>
+# workspace: <to be filled>
+deploy:
+  aws/mcp-lambda:
+    version: 0.3.6
+preDeployCommand: npm install && npm run build
