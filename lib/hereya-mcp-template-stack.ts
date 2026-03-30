@@ -100,6 +100,7 @@ export class HereyaMcpTemplateStack extends cdk.Stack {
         : iam.User.fromUserName(this, 'ExistingGitUser', existingIamUserName!);
 
       const codecommitPolicy = new iam.Policy(this, 'CodeCommitPolicy', {
+        policyName: `${safeName}-codecommit-policy`,
         statements: [
           new iam.PolicyStatement({
             actions: ['codecommit:GitPull', 'codecommit:GitPush'],
